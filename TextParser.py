@@ -34,9 +34,9 @@ def AddLatLon(body, head):
     lat = ''
     lon = ''
     for row in head[0]:
-        if str(row)[0] == re.compile('[NS][0-9][0-9]'):
+        if re.search(re.compile('^[NS][0-9][0-9]'), str(row)):
             lat += row
-        if str(row)[0] == re.compile('[EW][0-9][0-9]'):
+        if re.search(re.compile('^[EW][0-9][0-9]'), str(row)):
             lon += row
     # find lon
     # find location name
